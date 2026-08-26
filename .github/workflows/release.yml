@@ -198,6 +198,7 @@ jobs:
             --patches shared/patches.rvp \
             --bypass-verification \
             -d "Redirect catalog API" \
+            -d "Prefix API path with /v6" \
             -e "Change package name" \
               -O 'packageName="${{ matrix.variant.pkg }}"' \
               -O 'updatePermissions=true' \
