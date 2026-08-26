@@ -163,7 +163,7 @@ jobs:
           - { name: alt-AnTuTu,     pkg: "com.antutu.benchmark.full",  label: "BannerHub v6 AnTuTu" }
           - { name: PuBG-CrossFire, pkg: "com.tencent.tmgp.cf",        label: "BannerHub v6 PuBG CrossFire" }
           - { name: Ludashi,        pkg: "com.ludashi.aibench",        label: "BannerHub v6 Ludashi" }
-          - { name: Genshin,        pkg: "com.miHoYo.GenshinImpact",   label: "BannerHub v6 Genshin" }
+          - { name: Genshin,        pkg: "com.miHoYo.Yuanshen",   label: "BannerHub v6 Genshin" }
           - { name: Original,       pkg: "com.xiaoji.egggame",         label: "BannerHub v6" }
     steps:
       - name: Checkout
@@ -197,6 +197,7 @@ jobs:
           java -jar shared/revanced-cli.jar patch shared/GameHub_6.0.9.apk \
             --patches shared/patches.rvp \
             --bypass-verification \
+            -d "Redirect catalog API" \
             -e "Change package name" \
               -O 'packageName="${{ matrix.variant.pkg }}"' \
               -O 'updatePermissions=true' \
